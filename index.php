@@ -161,8 +161,8 @@
         <div class="result">
             <strong>Results:</strong><br>
             Weight: <?php echo number_format($weight, 2); ?> grams<br>
-            Ounces: <?php echo number_format($ounces, 4); ?> oz<br>
-            Kilograms: <?php echo number_format($kg, 4); ?> kg<br>
+            Ounces: <?php echo number_format($ounces, 2); ?> oz<br>
+            Kilograms: <?php echo number_format($kg, 2); ?> kg<br>
             Total: ₱<?php echo number_format($total, 2); ?>
         </div>
         <?php endif; ?>
