@@ -111,13 +111,8 @@
     // Check if form was submitted
     if (isset($_GET['weight']) && isset($_GET['price'])) {
         
-        // Check if fields are empty
-        if ($_GET['weight'] === '' || $_GET['price'] === '') {
-            $showError = true;
-            $errorMessage = 'Please fill in all fields!';
-        }
         // Check if values are positive numbers
-        else if ($_GET['weight'] <= 0 || $_GET['price'] <= 0) {
+        if ($_GET['weight'] < 0 || $_GET['price'] < 0) {
             $showError = true;
             $errorMessage = 'Please enter positive numbers only!';
         }
@@ -145,7 +140,7 @@
             
             <div>
                 <label>Price per gram (₱): <span class="required">*</span></label><br>
-                <input type="number"name="price" step="0.01" placeholder="Enter Price" value="<?php echo htmlspecialchars($price); ?>" required>
+                <input type="number"name="price" step="0.01" min="0.01" placeholder="Enter Price" value="<?php echo htmlspecialchars($price); ?>" required>
             </div>
             
             <input type="submit" value="CALCULATE GOLD VALUE">
@@ -161,8 +156,8 @@
         <div class="result">
             <strong>Results:</strong><br>
             Weight: <?php echo number_format($weight, 2); ?> grams<br>
-            Ounces: <?php echo number_format($ounces, 4); ?> oz<br>
-            Kilograms: <?php echo number_format($kg, 4); ?> kg<br>
+            Ounces: <?php echo number_format($ounces, 2); ?> oz<br>
+            Kilograms: <?php echo number_format($kg, 2); ?> kg<br>
             Total: ₱<?php echo number_format($total, 2); ?>
         </div>
         <?php endif; ?>
