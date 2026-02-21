@@ -99,6 +99,15 @@ BSIT-2B
             color: #c35816;
             font-size: 16px;
         }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        .input-group:last-of-type {
+            margin-bottom: 10px;
+        }
+        
     </style>
 </head>
 <body>
@@ -138,14 +147,14 @@ BSIT-2B
     <div class="container">
         <h2>Gold Value Calculator</h2>
         <form method="GET">
-            <div>
+            <div class="input-group">
                 <label>Weight (grams): <span class="required">*</span></label><br>
                 <input type="number" name="weight" step="0.01" min="0.01" placeholder="Enter Weight" value="<?php echo htmlspecialchars($weight); ?>" required>
             </div>
-            
-            <div>
+
+            <div class="input-group">
                 <label>Price per gram (₱): <span class="required">*</span></label><br>
-                <input type="number"name="price" step="0.01" min="0.01" placeholder="Enter Price" value="<?php echo htmlspecialchars($price); ?>" required>
+                <input type="number" name="price" step="0.01" min="0.01" placeholder="Enter Price" value="<?php echo htmlspecialchars($price); ?>" required>
             </div>
             
             <input type="submit" value="CALCULATE GOLD VALUE">
